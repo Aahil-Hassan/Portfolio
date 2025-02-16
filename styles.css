@@ -72,6 +72,21 @@ h1, h2 {
     z-index: -1;
     border-radius: 10px;
 }
+.section ul {
+    list-style-type: none;
+    padding: 0;
+}
+.section ul li {
+    margin: 10px 0;
+}
+.section ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+.section ul li a:hover {
+    color: #ff9800;
+}
 .skills {
     display: flex;
     flex-wrap: wrap;
