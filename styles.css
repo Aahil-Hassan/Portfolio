@@ -154,6 +154,41 @@ h1, h2 {
     z-index: 0;
 }
 
+.project a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+.project a:hover {
+    color: #ff9800;
+    text-shadow: 0 0 10px #ff9800, 0 0 20px #ff9800, 0 0 30px #ff9800;
+}
+
+.project-box {
+    background: rgba(31, 31, 31, 0.3);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+.project-box:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
+}
+.home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0077b5;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+.home-button:hover {
+    transform: scale(1.1);
+    background: #005582;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .container {
