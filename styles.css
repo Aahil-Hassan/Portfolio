@@ -167,7 +167,7 @@ h1, h2 {
 .project-box {
     background: rgba(31, 31, 31, 0.3);
     padding: 20px;
-    margin: 20px 0;
+    margin: 20px;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
 }
@@ -187,6 +187,11 @@ h1, h2 {
 .home-button:hover {
     transform: scale(1.1);
     background: #005582;
+}
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
 
 /* Responsive Design */
