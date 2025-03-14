@@ -210,6 +210,10 @@ h1, h2 {
         width: 90%;
         text-align: center;
     }
+    .project-box {
+        padding: 15px;
+        margin: 15px 0;
+    }
 }
 
 @media (max-width: 768px) {
@@ -232,6 +236,10 @@ h1, h2 {
         width: 100%;
         text-align: center;
     }
+    .project-box {
+        padding: 10px;
+        margin: 10px 0;
+    }
 }
 
 @media (max-width: 480px) {
@@ -253,5 +261,9 @@ h1, h2 {
     .skill {
         width: 100%;
         text-align: center;
+    }
+    .project-box {
+        padding: 8px;
+        margin: 8px 0;
     }
 }
