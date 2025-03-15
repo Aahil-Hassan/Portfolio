@@ -7,25 +7,25 @@ body {
     padding: 0;
 }
 
-/* Floating Glass Menu - Fully Fixed */
+/* Floating Glass Menu - Rounded & Always Horizontal */
 .menu {
     position: fixed;
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    flex-wrap: wrap; /* Allows wrapping for better fit */
+    flex-wrap: wrap; /* Keeps it horizontal but wraps if needed */
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    padding: 10px 20px;
+    gap: 12px;
+    padding: 12px 25px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(12px);
-    border-radius: 50px;
+    border-radius: 50px; /* Ensures a smooth round design */
     transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
     z-index: 1000;
+    max-width: 90%;
     width: auto;
-    max-width: 90%; /* Ensures it doesn’t stretch too wide */
 }
 
 /* Menu Links */
@@ -34,10 +34,10 @@ body {
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
-    padding: 10px 12px;
+    padding: 10px 15px;
     border-radius: 20px;
     transition: all 0.3s ease-in-out;
-    white-space: nowrap; /* Prevents text wrapping */
+    white-space: nowrap; /* Prevents text wrapping inside links */
 }
 
 .menu a:hover {
@@ -45,37 +45,21 @@ body {
     transform: scale(1.1);
 }
 
-/* Mobile Fixes */
+/* Responsive Fixes */
 @media (max-width: 768px) {
     .menu {
-        flex-wrap: wrap;
-        gap: 8px;
+        flex-wrap: nowrap; /* Keeps menu always horizontal */
+        overflow-x: auto; /* Enables scrolling if needed */
+        padding: 10px 15px;
+        max-width: 100%;
+        justify-content: flex-start; /* Ensures proper alignment */
+    }
+
+    .menu a {
         padding: 8px 12px;
-        max-width: 95%;
-    }
-
-    .menu a {
-        padding: 8px 10px;
         font-size: 14px;
     }
 }
-
-/* Super Small Screens */
-@media (max-width: 480px) {
-    .menu {
-        flex-direction: column;
-        align-items: center;
-        padding: 6px;
-        border-radius: 15px;
-    }
-
-    .menu a {
-        font-size: 14px;
-        padding: 6px 8px;
-    }
-}
-
-
 
 
 
