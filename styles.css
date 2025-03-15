@@ -7,28 +7,34 @@ body {
     padding: 0;
 }
 
+/* Floating Glass Menu */
 .menu {
     position: fixed;
-    top: 0;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap; /* Makes sure items wrap on smaller screens */
+    gap: 15px;
     padding: 12px 25px;
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
     border-radius: 50px;
-    transition: all 0.3s ease-in-out;
+    transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
     z-index: 1000;
+    max-width: 90%;
+    justify-content: center;
 }
 
+/* Menu Links */
 .menu a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    padding: 8px 15px;
+    padding: 10px 15px;
     border-radius: 20px;
     transition: all 0.3s ease-in-out;
+    white-space: nowrap; /* Prevents text wrapping */
 }
 
 .menu a:hover {
@@ -36,12 +42,21 @@ body {
     transform: scale(1.1);
 }
 
-/* Shrinking effect on scroll */
-.shrink {
-    padding: 8px 20px;
-    backdrop-filter: blur(15px);
-    transform: translateX(-50%) scale(0.9);
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .menu a {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
 }
+
 
 
 .container {
