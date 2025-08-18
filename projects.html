@@ -83,57 +83,102 @@
 
 
 
-<div class="project">
-    <h2>🌍 Interactive Map</h2>
-    <p>An interactive web-based map built directly with Leaflet, allowing zoom, pan, and markers.</p>
-
-    <!-- Map Container -->
-    <div id="map"></div>
-
-    <!-- Leaflet JS + CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-    <style>
-        /* Make the map responsive */
-        #map {
-            height: 60vh;   /* Use viewport height so it adjusts with screen */
-            width: 100%;    /* Full width on all screens */
-            border-radius: 12px;
-            margin-top: 10px;
-        }
-
-        /* On very small screens (phones), adjust height */
-        @media (max-width: 768px) {
-            #map {
-                height: 50vh;
-            }
-        }
-    </style>
-
-    <script>
-        // Initialize map (centered on Gilgit)
-        var map = L.map('map').setView([35.92, 74.31], 9);
-
-        // Add OpenStreetMap tiles
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
-
-        // Add markers with popups
-        L.marker([35.91431091275764, 74.34684737279406]).addTo(map)
-          .bindPopup("📍 Gilgit, Pakistan")
-          .openPopup();
-
-        L.marker([36.319854729903575, 74.65011687620861]).addTo(map)
-          .bindPopup("📍 Hunza Valley");
-
-        // Make map resize properly if screen changes
-        window.addEventListener("resize", function () {
-            map.invalidateSize();
-        });
-    </script>
-</div>
+        <div class="project">
+            <h2>🌍 Interactive Map with Optional Buffer</h2>
+            <p>Enter coordinates (lat, lon). Add a radius (km) only if you want a buffer.</p>
+        
+            <!-- Input Form -->
+            <div style="margin-bottom: 15px;">
+                <label>Latitude: </label>
+                <input type="number" id="lat" step="0.0001" placeholder="35.92">
+                <label>Longitude: </label>
+                <input type="number" id="lon" step="0.0001" placeholder="74.31">
+                <label>Radius (km, optional): </label>
+                <input type="number" id="radius" placeholder="5">
+                <button onclick="addBuffer()">Draw</button>
+            </div>
+        
+            <!-- Map Container -->
+            <div id="map"></div>
+        
+            <!-- Leaflet JS + CSS -->
+            <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        
+            <style>
+                #map {
+                    height: 60vh;
+                    width: 100%;
+                    border-radius: 12px;
+                    margin-top: 10px;
+                }
+                @media (max-width: 768px) {
+                    #map { height: 50vh; }
+                }
+                input, button {
+                    margin: 5px;
+                    padding: 5px;
+                    border-radius: 6px;
+                }
+            </style>
+        
+            <script>
+                // Initialize map
+                var map = L.map('map').setView([35.92, 74.31], 9);
+        
+                // Add OpenStreetMap tiles
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(map);
+        
+                // Group layer for buffers/markers
+                var bufferLayer = L.layerGroup().addTo(map);
+        
+                // Function to add marker/buffer
+                function addBuffer() {
+                    var lat = parseFloat(document.getElementById("lat").value);
+                    var lon = parseFloat(document.getElementById("lon").value);
+                    var radiusInput = document.getElementById("radius").value.trim();
+        
+                    if (isNaN(lat) || isNaN(lon)) {
+                        alert("⚠️ Please enter valid latitude and longitude.");
+                        return;
+                    }
+        
+                    // Clear previous layers
+                    bufferLayer.clearLayers();
+        
+                    // Add marker
+                    var marker = L.marker([lat, lon]).addTo(bufferLayer)
+                                  .bindPopup(`📍 Lat: ${lat}, Lon: ${lon}`)
+                                  .openPopup();
+        
+                    // If radius is given → add buffer
+                    if (radiusInput !== "") {
+                        var radius = parseFloat(radiusInput) * 1000; // km → meters
+                        if (!isNaN(radius) && radius > 0) {
+                            var circle = L.circle([lat, lon], {
+                                radius: radius,
+                                color: "blue",
+                                fillColor: "lightblue",
+                                fillOpacity: 0.3
+                            }).addTo(bufferLayer);
+        
+                            // Zoom to buffer
+                            map.fitBounds(circle.getBounds());
+                        }
+                    } else {
+                        // If only marker → center map on it
+                        map.setView([lat, lon], 12);
+                    }
+                }
+        
+                // Fix map resizing on window resize
+                window.addEventListener("resize", function () {
+                    map.invalidateSize();
+                });
+            </script>
+        </div>
 
 
 
