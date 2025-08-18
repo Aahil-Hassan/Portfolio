@@ -59,7 +59,7 @@
     <ul>
         <li><strong>🌿 Afforestation & Deforestation Analysis:</strong>  
             Assessed land cover changes using satellite imagery, NDVI analysis, and remote sensing techniques.</li>
-        <li><strong🏙️ Urban Sprawl Detection:</strong>  
+        <li><strong>🏙️ Urban Sprawl Detection:</strong>  
             Analyzed urban expansion patterns through multi-temporal satellite imagery and spatial analysis.</li>
         <li><strong>📍 Georeferencing & Digitization:</strong>  
             Georeferenced historical maps and digitized spatial features for GIS applications.</li>
@@ -83,17 +83,58 @@
 
 
 
-        <div class="project">
-            <h2>🌍 Interactive Map with uMap</h2>
-            <p>Created an interactive web-based map using uMap, an open-source mapping tool that allows users to customize and share maps easily.</p>
+<div class="project">
+    <h2>🌍 Interactive Map</h2>
+    <p>An interactive web-based map built directly with Leaflet, allowing zoom, pan, and markers.</p>
 
-            <div class="iframe-container">
-            <iframe src="http://u.osmfr.org/m/1191519/" allowfullscreen loading="lazy"></iframe>
-            </div>
+    <!-- Map Container -->
+    <div id="map"></div>
 
-            <br>
-            <a href="http://u.osmfr.org/m/1191519/" target="_blank" class="project-link">Open Full Map</a>
-        </div>
+    <!-- Leaflet JS + CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <style>
+        /* Make the map responsive */
+        #map {
+            height: 60vh;   /* Use viewport height so it adjusts with screen */
+            width: 100%;    /* Full width on all screens */
+            border-radius: 12px;
+            margin-top: 10px;
+        }
+
+        /* On very small screens (phones), adjust height */
+        @media (max-width: 768px) {
+            #map {
+                height: 50vh;
+            }
+        }
+    </style>
+
+    <script>
+        // Initialize map (centered on Gilgit)
+        var map = L.map('map').setView([35.92, 74.31], 9);
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Add markers with popups
+        L.marker([35.91431091275764, 74.34684737279406]).addTo(map)
+          .bindPopup("📍 Gilgit, Pakistan")
+          .openPopup();
+
+        L.marker([36.319854729903575, 74.65011687620861]).addTo(map)
+          .bindPopup("📍 Hunza Valley");
+
+        // Make map resize properly if screen changes
+        window.addEventListener("resize", function () {
+            map.invalidateSize();
+        });
+    </script>
+</div>
+
 
 
 
