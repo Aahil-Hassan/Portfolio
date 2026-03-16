@@ -83,102 +83,186 @@
 }
 </script>
 
+    <!-- Google Fonts: Inter & Phosphor Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
-    <style>
-        .styled-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #0077b5, #005582);
-            padding: 12px 18px;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 25px;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-        }
-        .styled-button:hover {
-            background: linear-gradient(135deg, #005582, #003d4c);
-            transform: scale(1.05);
-        }
-    </style>
+    <script defer src="scripts.js"></script>
 </head>
 
 <body>
     <div class="background-animation"></div>
-    <div class="menu">
-        <a href="#about">About Me</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="projects.html">Projects</a>
-        <a href="#contact">Contact</a>
-    </div>
-    <div class="container">
-        <div class="profile-container">
-            <img src="profile.jpg" alt="Aahil Hassan Mir" class="profile-img">
-            <h1>Aahil Hassan Mir | GIS Analyst & Remote Sensing Expert</h1>
-        </div>
+    
+    <nav class="menu glass-panel">
+        <a href="#about"><i class="ph ph-user"></i> About Me</a>
+        <a href="#skills"><i class="ph ph-lightning"></i> Skills</a>
+        <a href="#experience"><i class="ph ph-briefcase"></i> Experience</a>
+        <a href="projects.html" class="highlight-link"><i class="ph ph-folder-open"></i> Projects</a>
+        <a href="#contact"><i class="ph ph-envelope-simple"></i> Contact</a>
+    </nav>
 
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <p>
-                I’m <strong>Aahil Hassan Mir</strong>, a GIS & Remote Sensing Analyst based in <strong>Gilgit, Pakistan</strong>. I specialize in transforming complex geospatial data into actionable insights for research, urban planning, and high-level decision-making. My expertise is uniquely focused on the challenges of <strong>mountainous and environmentally sensitive regions</strong> like Gilgit-Baltistan.
-            </p>
-            <p>
-                I leverage <strong>Python-based GIS automation</strong>, <strong>Google Earth Engine</strong>, and modern web-mapping technologies to build scalable solutions. My work spans from Land-Use/Land-Cover analysis and disaster risk assessments to terrain modeling and AI-assisted geospatial tools. By automating workflows and deploying cloud-based platforms, I focus on increasing analytical accuracy while reducing manual effort.
-            </p>
-            <p>
-                My mission is to bridge the gap between <strong>geospatial research and modern technology</strong>. Whether I am supporting local development in Gilgit-Baltistan or designing interactive web maps for global applications, I bring a <strong>problem-solving mindset</strong> and technical precision to every project.
-            </p>
-        </section>
-
-        <section id="skills" class="section">
-            <h2>Skills</h2>
-            <div class="skills">
-                <span class="skill">GIS Mapping & Spatial Analysis</span>
-                <span class="skill">Remote Sensing & Image Processing</span>
-                <span class="skill">Google Earth Engine (GEE)</span>
-                <span class="skill">Python (Pandas, Geopandas, Folium, Leafmap, SAM GEO)</span>
-                <span class="skill">AI Model Integration for GIS</span>
-                <span class="skill">Data Processing Automation</span>
-                <span class="skill">Web GIS Development</span>
-                <span class="skill">Flask & Streamlit App Development</span>
-                <span class="skill">Cartography & Data Visualization</span>
-                <span class="skill">Digitizing & Georeferencing</span>
+    <div class="container fade-in">
+        <header class="profile-container fade-in scroll-element">
+            <div class="profile-layout">
+                <div class="profile-text">
+                    <span class="greeting badge">Hello, I'm</span>
+                    <h1 class="gradient-text">Aahil Hassan Mir</h1>
+                    <h2 class="subtitle">GIS Analyst & Remote Sensing Expert</h2>
+                    <p class="tagline">Transforming complex spatial data into actionable insights through automation and web mapping.</p>
+                    
+                    <div class="hero-actions">
+                        <a href="projects.html" class="styled-button primary"><i class="ph ph-folder-open"></i> View My Projects</a>
+                        <a href="#contact" class="styled-button outline"><i class="ph ph-paper-plane-tilt"></i> Get In Touch</a>
+                    </div>
+                </div>
                 
+                <div class="profile-image-wrapper">
+                    <div class="profile-img-glow">
+                        <img src="profile.jpg" alt="Aahil Hassan Mir" class="profile-img">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="about" class="section glass-panel fade-in scroll-element">
+            <div class="section-header">
+                <h2><i class="ph ph-user"></i> About Me</h2>
+            </div>
+            <div class="about-content">
+                <p>
+                    I’m <strong>Aahil Hassan Mir</strong>, a GIS & Remote Sensing Analyst based in <strong>Gilgit, Pakistan</strong>. I specialize in transforming complex geospatial data into actionable insights for research, urban planning, and high-level decision-making. My expertise is uniquely focused on the challenges of <strong>mountainous and environmentally sensitive regions</strong> like Gilgit-Baltistan.
+                </p>
+                <p>
+                    I leverage <strong>Python-based GIS automation</strong>, <strong>Google Earth Engine</strong>, and modern web-mapping technologies to build scalable solutions. My work spans from Land-Use/Land-Cover analysis and disaster risk assessments to terrain modeling and AI-assisted geospatial tools. By automating workflows and deploying cloud-based platforms, I focus on increasing analytical accuracy while reducing manual effort.
+                </p>
+                <p>
+                    My mission is to bridge the gap between <strong>geospatial research and modern technology</strong>. Whether I am supporting local development in Gilgit-Baltistan or designing interactive web maps for global applications, I bring a <strong>problem-solving mindset</strong> and technical precision to every project.
+                </p>
             </div>
         </section>
 
-        <section id="experience" class="section">
-            <h2>Experience</h2>
-            <p><strong>GIS Analyst - Tech Fusion</strong> (April 2024 - December 2024)</p>
-            <p>Performed geospatial analysis and GIS mapping.</p>
-            <p><strong>GIS Expert/Analyst - Himalaya Geolabs</strong> (Jan 2023 - Mar 2024)</p>
-            <p>Executed mapping and georeferencing tasks while supporting data analysis for diverse projects.</p>
-        </section>
-
-        <section id="education" class="section">
-            <h2>Education & Certifications</h2>
-            <p><strong>BS in Remote Sensing and GIS  </strong> - Karakoram International University</p>
-         
-        </section>
-
-        <section id="contact" class="section">
-            <h2>Contact</h2>
-            <a href="mailto:aahilhassan96@gmail.com" class="styled-button">📧 Email Me</a>
-            <br><br>
-            <a href="https://www.linkedin.com/in/aahil-hassan" target="_blank" class="styled-button">💼 LinkedIn</a>
-            <a href="https://github.com/Aahil-Hassan" target="_blank" class="styled-button">💻 GitHub</a>
-            <br><br>
+        <section id="skills" class="section glass-panel fade-in scroll-element">
+            <div class="section-header">
+                <h2><i class="ph ph-lightning"></i> Skills & Technologies</h2>
+            </div>
             
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="ph ph-globe-hemisphere-west"></i> GIS & Remote Sensing</h3>
+                    <div class="skills">
+                        <span class="skill">Spatial Analysis</span>
+                        <span class="skill">Image Processing</span>
+                        <span class="skill">Cartography</span>
+                        <span class="skill">Google Earth Engine</span>
+                        <span class="skill">Digitizing</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="ph ph-code"></i> Engineering & Web</h3>
+                    <div class="skills">
+                        <span class="skill">Python</span>
+                        <span class="skill">Pandas/Geopandas</span>
+                        <span class="skill">Web GIS Development</span>
+                        <span class="skill">Flask & Streamlit</span>
+                        <span class="skill">Folium & Leafmap</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="ph ph-brain"></i> Data & AI</h3>
+                    <div class="skills">
+                        <span class="skill">Data Automation</span>
+                        <span class="skill">AI Model Integration</span>
+                        <span class="skill">SAM GEO</span>
+                        <span class="skill">Spatial Data Science</span>
+                    </div>
+                </div>
+            </div>
         </section>
+
+        <div class="two-col-layout">
+            <section id="experience" class="section glass-panel fade-in scroll-element fill-height">
+                <div class="section-header">
+                    <h2><i class="ph ph-briefcase"></i> Experience</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>GIS Analyst</h3>
+                            <h4 class="company">Tech Fusion</h4>
+                            <span class="date"><i class="ph ph-calendar-blank"></i> April 2024 - December 2024</span>
+                            <p>Performed geospatial analysis and GIS mapping, transforming spatial data into interactive visual reports.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>GIS Expert/Analyst</h3>
+                            <h4 class="company">Himalaya Geolabs</h4>
+                            <span class="date"><i class="ph ph-calendar-blank"></i> Jan 2023 - Mar 2024</span>
+                            <p>Executed mapping and georeferencing tasks while supporting data analysis for diverse geospatial and mapping projects.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education" class="section glass-panel fade-in scroll-element fill-height">
+                <div class="section-header">
+                    <h2><i class="ph ph-graduation-cap"></i> Education</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>BS in Remote Sensing and GIS</h3>
+                            <h4 class="company">Karakoram International University</h4>
+                            <p>Specialized in spatial computing, mountainous terrain analysis, and web-based GIS solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section id="contact" class="section glass-panel fade-in scroll-element text-center">
+            <div class="section-header center">
+                <h2><i class="ph ph-handshake"></i> Let's Connect</h2>
+                <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+            </div>
+            
+            <div class="contact-links-grid">
+                <a href="mailto:aahilhassan96@gmail.com" class="contact-card">
+                    <div class="contact-icon"><i class="ph ph-envelope-simple"></i></div>
+                    <h3>Email</h3>
+                    <p>aahilhassan96@gmail.com</p>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/aahil-hassan" target="_blank" class="contact-card">
+                    <div class="contact-icon"><i class="ph ph-linkedin-logo"></i></div>
+                    <h3>LinkedIn</h3>
+                    <p>Connect professionally</p>
+                </a>
+                
+                <a href="https://github.com/Aahil-Hassan" target="_blank" class="contact-card">
+                    <div class="contact-icon"><i class="ph ph-github-logo"></i></div>
+                    <h3>GitHub</h3>
+                    <p>View my code repositories</p>
+                </a>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <p>&copy; 2024 Aahil Hassan Mir. Built with code and geospatial passion.</p>
+        </footer>
     </div>
+    
+    <a href="#" class="back-to-top" id="backToTop"><i class="ph ph-arrow-up"></i></a>
+
 <script src="starfield.js"></script>
 </body>
 </html>
-
-
-
-
-
-

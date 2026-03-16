@@ -12,113 +12,441 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Aahil Hassan Mir</title>
+    <title>Projects Portfolio - Aahil Hassan Mir</title>
+    
+    <!-- Google Fonts: Inter & Phosphor Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .styled-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #0077b5, #005582);
-            padding: 10px 16px;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 25px;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-        }
-        .styled-button:hover {
-            background: linear-gradient(135deg, #005582, #003d4c);
-            transform: scale(1.05);
-        }
-        .project {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 12px;
-            text-align: left;
-        }
-        .project h2 {
-            color: #00bcd4;
-        }
-        .project p {
-            color: #ddd;
-        }
-    </style>
+    <script defer src="scripts.js"></script>
 </head>
 <body>
-    <div class="menu">
-        <a href="index.html" class="styled-button">🏠 Home</a>
-        <a href="https://www.linkedin.com/in/aahil-hassan" target="_blank" class="styled-button">💼 LinkedIn</a>
-        <a href="https://github.com/Aahil-Hassan" target="_blank" class="styled-button">💻 GitHub</a>
-    </div>
+    <div class="background-animation"></div>
+    
+    <nav class="menu glass-panel">
+        <a href="index.html"><i class="ph ph-house"></i> Home</a>
+        <a href="index.html#experience"><i class="ph ph-briefcase"></i> Experience</a>
+        <a href="#" class="highlight-link active"><i class="ph ph-folder-open"></i> Projects</a>
+        <a href="https://www.linkedin.com/in/aahil-hassan" target="_blank" class="social-link"><i class="ph ph-linkedin-logo"></i> LinkedIn</a>
+        <a href="https://github.com/Aahil-Hassan" target="_blank" class="social-link"><i class="ph ph-github-logo"></i> GitHub</a>
+    </nav>
 
-    <div class="container">
-        <h1>Projects</h1>
-                <div class="project">
-            <h2>🗺️ GIS Experience</h2>
-    <ul>
-        <li><strong>🌿 Afforestation & Deforestation Analysis:</strong>  
-            Assessed land cover changes using satellite imagery, NDVI analysis, and remote sensing techniques.</li>
-        <li><strong>🏙️ Urban Sprawl Detection:</strong>  
-            Analyzed urban expansion patterns through multi-temporal satellite imagery and spatial analysis.</li>
-        <li><strong>📍 Georeferencing & Digitization:</strong>  
-            Georeferenced historical maps and digitized spatial features for GIS applications.</li>
-        <li><strong>🗺️ Cartography & Thematic Mapping:</strong>  
-            Designed interactive and static maps for different occasions.</li>
+    <div class="container fade-in">
+        <header class="page-header mt-5 mb-4 text-center">
+            <span class="badge badge-accent"><i class="ph ph-code"></i> Portfolio</span>
+            <h1 class="gradient-text display-title">Featured Projects</h1>
+            <p class="subtitle mt-2">A showcase of my recent work in GIS, Web Mapping, and AI Automation.</p>
+        </header>
 
-    </ul>
+        <div class="projects-grid">
+            
+            <!-- Project 1: GIS Experience -->
+            <div class="project-card glass-panel fade-in scroll-element">
+                <div class="project-card-header">
+                    <div class="project-icon"><i class="ph ph-map-trifold"></i></div>
+                    <h2>Applied GIS Analysis</h2>
+                </div>
+                <div class="project-card-body">
+                    <ul class="custom-list">
+                        <li><strong>Afforestation & Deforestation:</strong> Assessed land cover changes using satellite imagery, NDVI analysis, and remote sensing.</li>
+                        <li><strong>Urban Sprawl Detection:</strong> Analyzed urban expansion patterns through multi-temporal satellite imagery.</li>
+                        <li><strong>Georeferencing & Digitization:</strong> Georeferenced historical maps and digitized spatial features.</li>
+                        <li><strong>Cartography:</strong> Designed interactive and static thematic maps for high-level decision making.</li>
+                    </ul>
+                </div>
+                <div class="project-tags">
+                    <span class="tag">Remote Sensing</span>
+                    <span class="tag">ArcGIS</span>
+                    <span class="tag">Cartography</span>
+                </div>
+            </div>
+
+            <!-- Project 2: Streamlit Map -->
+            <div class="project-card glass-panel fade-in scroll-element">
+                <div class="project-card-header">
+                    <div class="project-icon"><i class="ph ph-globe-hemisphere-west"></i></div>
+                    <h2>Leafmap & Streamlit App</h2>
+                </div>
+                <div class="project-card-body">
+                    <p>A powerful web application built with Python using Leafmap and Streamlit for dynamic geospatial data visualization and interactive map rendering directly in the browser.</p>
+                </div>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Streamlit</span>
+                    <span class="tag">Leafmap</span>
+                </div>
+                <div class="project-card-footer">
+                    <a href="https://huggingface.co/spaces/Ahil7/streamlitmap" target="_blank" class="styled-button full-width"><i class="ph ph-arrow-square-out"></i> Launch Application</a>
+                </div>
+            </div>
+            
+            <!-- Project 3: Chatbot -->
+            <div class="project-card glass-panel fade-in scroll-element">
+                <div class="project-card-header">
+                    <div class="project-icon"><i class="ph ph-robot"></i></div>
+                    <h2>AI Chatbot with Streamlit</h2>
+                </div>
+                <div class="project-card-body">
+                    <p>An intelligent, interactive chatbot built entirely in Python using Streamlit, deployed seamlessly online for instant user query resolution and real-time responses.</p>
+                </div>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Streamlit</span>
+                    <span class="tag">AI/LLM</span>
+                </div>
+                <div class="project-card-footer">
+                    <a href="https://at0m-chat.streamlit.app/" target="_blank" class="styled-button full-width"><i class="ph ph-arrow-square-out"></i> Chat Now</a>
+                </div>
+            </div>
+
+            <!-- Project 5: AI Report Generator -->
+            <div class="project-card glass-panel fade-in scroll-element">
+                <div class="project-card-header">
+                    <div class="project-icon"><i class="ph ph-file-text"></i></div>
+                    <h2>AI-Powered Report Generator</h2>
+                </div>
+                <div class="project-card-body">
+                    <p>Developed an automated pipeline for GIS data processing that leverages Artificial Intelligence to drastically increase analysis speed and automatically generate detailed, ready-to-present spatial reports.</p>
+                </div>
+                <div class="project-tags">
+                    <span class="tag">Automation</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">AI</span>
+                </div>
+            </div>
+
+            <!-- Project 6: YOLO -->
+            <div class="project-card glass-panel fade-in scroll-element">
+                <div class="project-card-header">
+                    <div class="project-icon"><i class="ph ph-bounding-box"></i></div>
+                    <h2>YOLO on Satellite Images</h2>
+                </div>
+                <div class="project-card-body">
+                    <p>Utilized the YOLO (You Only Look Once) deep learning model to accurately detect and classify specific terrain objects directly from high-resolution remote sensing satellite imagery.</p>
+                </div>
+                <div class="project-tags">
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">Computer Vision</span>
+                    <span class="tag">YOLO</span>
+                </div>
+            </div>
+
+            <!-- Project 7: Leafmap Agent -->
+            <div class="project-card glass-panel fade-in scroll-element">
+                <div class="project-card-header">
+                    <div class="project-icon"><i class="ph ph-terminal-window"></i></div>
+                    <h2>Leafmap AI Agent</h2>
+                </div>
+                <div class="project-card-body">
+                    <p>Engineered an intelligent AI agent capable of parsing natural language inputs and executing real-time, interactive GIS mapping commands seamlessly into the Leafmap environment.</p>
+                </div>
+                <div class="project-tags">
+                    <span class="tag">AI Agents</span>
+                    <span class="tag">NLP</span>
+                    <span class="tag">Leafmap</span>
+                </div>
+            </div>
+
         </div>
 
-        <div class="project">
-            <h2>🚀 Chatbot with Streamlit</h2>
-            <p>A chatbot built using Streamlit, deployed online for interactive responses.</p>
-            <a href="https://at0m-chat.streamlit.app/" target="_blank" class="project-link">View Project</a>
-        </div>
-
-        <div class="project">
-            <h2>🗺️ Leafmap & Streamlit App</h2>
-            <p>An application built with Leafmap and Streamlit for geospatial data visualization.</p>
-            <a href="https://huggingface.co/spaces/Ahil7/streamlitmap" target="_blank" class="project-link">View Project</a>
-        </div>
-
-
-
-        <div class="project">
-            <h2>🌍 Interactive Map </h2>
-            <p>Enter coordinates (lat, lon). Add a radius (km) only if you want a buffer.</p>
-        
+        <!-- Project 4: Interactive Map (Spans Full Width) -->
+        <div class="project-card glass-panel fade-in scroll-element mt-4 mb-5">
+            <div class="project-card-header map-header">
+                <div class="header-left">
+                    <div class="project-icon glow-icon"><i class="ph ph-map-pin-line"></i></div>
+                    <h2>Live Geospatial Buffer Map</h2>
+                </div>
+                <p class="map-desc">An interactive coordinate plotting tool. Enter a latitude and longitude to drop a pin. Optionally, add a radius in kilometers to generate a spatial buffer zone natively implemented with Leaflet.js.</p>
+            </div>
+            
             <!-- Input Form -->
-            <div style="margin-bottom: 15px;">
-                <label>Latitude: </label>
-                <input type="number" id="lat" step="0.0001" placeholder="35.92">
-                <label>Longitude: </label>
-                <input type="number" id="lon" step="0.0001" placeholder="74.31">
-                <label>Radius (km, optional): </label>
-                <input type="number" id="radius" placeholder="5">
-                <button onclick="addBuffer()">Draw</button>
+            <div class="map-controls container-glass">
+                <div class="input-group">
+                    <label><i class="ph ph-arrows-out-line-horizontal"></i> Latitude: </label>
+                    <input type="number" id="lat" step="0.0001" placeholder="35.92">
+                </div>
+                <div class="input-group">
+                    <label><i class="ph ph-arrows-out-line-vertical"></i> Longitude: </label>
+                    <input type="number" id="lon" step="0.0001" placeholder="74.31">
+                </div>
+                <div class="input-group">
+                    <label><i class="ph ph-circle-dashed"></i> Radius (km): </label>
+                    <input type="number" id="radius" placeholder="5 (Optional)">
+                </div>
+                <div class="button-group">
+                    <button onclick="addBuffer()" class="styled-button primary"><i class="ph ph-pencil-simple"></i> Draw Map Layer</button>
+                </div>
             </div>
         
             <!-- Map Container -->
-            <div id="map"></div>
+            <div class="map-wrapper">
+                <div id="map"></div>
+            </div>
         
             <!-- Leaflet JS + CSS -->
             <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
             <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
         
             <style>
+                .mt-5 { margin-top: 5rem; }
+                .mt-4 { margin-top: 2.5rem; }
+                .mb-4 { margin-bottom: 2.5rem; }
+                .mb-5 { margin-bottom: 5rem; }
+                
+                .page-header {
+                    margin-bottom: 3rem;
+                }
+                
+                .display-title {
+                    font-size: 3rem;
+                    line-height: 1.1;
+                }
+                
+                .badge-accent {
+                    background: rgba(0, 188, 212, 0.1);
+                    color: var(--accent-color);
+                    border: 1px solid rgba(0, 188, 212, 0.3);
+                    padding: 6px 16px;
+                    border-radius: 30px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 6px;
+                    margin-bottom: 1rem;
+                }
+                
+                .projects-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+                    gap: 25px;
+                }
+                
+                .project-card {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0;
+                    height: 100%;
+                    overflow: hidden;
+                    border-radius: 20px;
+                }
+                
+                .project-card-header {
+                    padding: 25px 25px 15px;
+                    border-bottom: 1px solid rgba(255,255,255,0.05);
+                }
+                
+                .project-icon {
+                    width: 48px;
+                    height: 48px;
+                    background: rgba(0, 188, 212, 0.1);
+                    color: var(--accent-color);
+                    border-radius: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 24px;
+                    margin-bottom: 15px;
+                }
+                
+                .project-card h2 {
+                    margin-bottom: 0;
+                    font-size: 1.4rem;
+                    border-bottom: none;
+                }
+                
+                .project-card-body {
+                    padding: 20px 25px;
+                    flex-grow: 1;
+                }
+                
+                .custom-list {
+                    list-style: none;
+                    padding: 0;
+                }
+                
+                .custom-list li {
+                    position: relative;
+                    padding-left: 20px;
+                    margin-bottom: 12px;
+                    font-size: 0.95rem;
+                    color: var(--text-muted);
+                }
+                
+                .custom-list li::before {
+                    content: '→';
+                    position: absolute;
+                    left: 0;
+                    color: var(--accent-color);
+                    font-weight: bold;
+                }
+                
+                .custom-list strong {
+                    color: var(--text-color);
+                }
+                
+                .project-tags {
+                    padding: 0 25px 20px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 8px;
+                }
+                
+                .tag {
+                    font-size: 0.75rem;
+                    padding: 4px 10px;
+                    border-radius: 20px;
+                    background: rgba(255,255,255,0.05);
+                    border: 1px solid rgba(255,255,255,0.1);
+                    color: var(--text-muted);
+                }
+                
+                .project-card-footer {
+                    padding: 20px 25px;
+                    border-top: 1px solid rgba(255,255,255,0.05);
+                    background: rgba(0,0,0,0.1);
+                }
+                
+                .full-width {
+                    width: 100%;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 8px;
+                }
+                
+                /* Map Styles */
+                .map-header {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                }
+                
+                .header-left {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                }
+                
+                .header-left .project-icon {
+                    margin-bottom: 0;
+                }
+                
+                .map-desc {
+                    margin: 0;
+                    font-size: 0.95rem;
+                }
+                
+                .container-glass {
+                    background: rgba(0,0,0,0.2);
+                    border-top: 1px solid rgba(255,255,255,0.05);
+                    border-bottom: 1px solid rgba(255,255,255,0.05);
+                }
+                
+                .map-controls {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 15px;
+                    padding: 20px 25px;
+                    align-items: end;
+                }
+                
+                .input-group {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                }
+                
+                .input-group label {
+                    font-size: 0.85rem;
+                    color: var(--text-muted);
+                    font-weight: 500;
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                }
+                
+                .map-controls input {
+                    padding: 10px 14px;
+                    border-radius: 8px;
+                    border: 1px solid rgba(255,255,255,0.15);
+                    background: rgba(13, 17, 23, 0.8);
+                    color: white;
+                    font-family: inherit;
+                    transition: all 0.3s ease;
+                }
+                
+                .map-controls input:focus {
+                    outline: none;
+                    border-color: var(--accent-color);
+                    box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.2);
+                }
+                
+                .button-group {
+                    height: 100%;
+                    display: flex;
+                    align-items: flex-end;
+                }
+                
+                .button-group .styled-button {
+                    width: 100%;
+                    padding: 10px 14px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 8px;
+                }
+                
+                .map-wrapper {
+                    padding: 25px;
+                }
+                
                 #map {
-                    height: 60vh;
+                    height: 500px;
                     width: 100%;
                     border-radius: 12px;
-                    margin-top: 10px;
+                    z-index: 1;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                    border: 1px solid rgba(255,255,255,0.1);
                 }
+                
+                /* Leaflet Dark Theme Overrides */
+                .leaflet-container {
+                    background: #1a1a1a;
+                }
+                .leaflet-popup-content-wrapper, .leaflet-popup-tip {
+                    background: #242424;
+                    color: #eee;
+                    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+                    border: 1px solid rgba(255,255,255,0.1);
+                }
+                .leaflet-control-zoom a {
+                    background: #242424 !important;
+                    color: #eee !important;
+                    border-color: rgba(255,255,255,0.1) !important;
+                }
+                .leaflet-control-zoom a:hover {
+                    background: #333 !important;
+                    color: var(--accent-color) !important;
+                }
+                .leaflet-control-attribution {
+                    background: rgba(0,0,0,0.7) !important;
+                    color: #aaa !important;
+                }
+                .leaflet-control-attribution a {
+                    color: #00bcd4 !important;
+                }
+                
                 @media (max-width: 768px) {
-                    #map { height: 50vh; }
-                }
-                input, button {
-                    margin: 5px;
-                    padding: 5px;
-                    border-radius: 6px;
+                    .projects-grid {
+                        grid-template-columns: 1fr;
+                    }
+                    #map { height: 400px; }
+                    .display-title { font-size: 2.5rem; }
                 }
             </style>
         
@@ -126,9 +454,9 @@
                 // Initialize map
                 var map = L.map('map').setView([35.92, 74.31], 9);
         
-                // Add OpenStreetMap tiles
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '© OpenStreetMap contributors'
+                // Use CartoDB Dark Matter tiles for a much better dark theme fit!
+                L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
                 }).addTo(map);
         
                 // Group layer for buffers/markers
@@ -148,9 +476,17 @@
                     // Clear previous layers
                     bufferLayer.clearLayers();
         
+                    // Add modern marker icon styling
+                    var markerIcon = L.divIcon({
+                        className: 'custom-div-icon',
+                        html: "<div style='background-color:#00bcd4; width:20px; height:20px; border-radius:50%; border:3px solid white; box-shadow: 0 0 10px rgba(0,188,212,0.8);'></div>",
+                        iconSize: [20, 20],
+                        iconAnchor: [10, 10]
+                    });
+
                     // Add marker
-                    var marker = L.marker([lat, lon]).addTo(bufferLayer)
-                                  .bindPopup(`📍 Lat: ${lat}, Lon: ${lon}`)
+                    var marker = L.marker([lat, lon], {icon: markerIcon}).addTo(bufferLayer)
+                                  .bindPopup(`<div style='text-align:center;'><strong>Target Location</strong><br>Lat: ${lat}<br>Lon: ${lon}</div>`)
                                   .openPopup();
         
                     // If radius is given → add buffer
@@ -159,9 +495,10 @@
                         if (!isNaN(radius) && radius > 0) {
                             var circle = L.circle([lat, lon], {
                                 radius: radius,
-                                color: "blue",
-                                fillColor: "lightblue",
-                                fillOpacity: 0.3
+                                color: "#00bcd4",
+                                weight: 2,
+                                fillColor: "#0077b5",
+                                fillOpacity: 0.2
                             }).addTo(bufferLayer);
         
                             // Zoom to buffer
@@ -179,25 +516,10 @@
                 });
             </script>
         </div>
-
-
-
-
-        <div class="project">
-            <h2>🧠 AI-Powered Report Generator</h2>
-            <p>Automated GIS data processing using AI for faster analysis.</p>
-        </div>
-
-        <div class="project">
-            <h2>📡 YOLO Object Detection on Satellite Images</h2>
-            <p>Developed an AI model to detect objects in remote sensing imagery.</p>
-        </div>
-
-        <div class="project">
-            <h2>🖥️ Leafmap Agent for Interactive GIS Command Execution</h2>
-            <p>Created an AI agent for real-time GIS commands using Leafmap.</p>
-        </div>
     </div>
+    
+    <a href="#" class="back-to-top" id="backToTop"><i class="ph ph-arrow-up"></i></a>
+    
 <script src="starfield.js"></script>
 </body>
 </html>
